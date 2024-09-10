@@ -29,7 +29,7 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-            let text = `👋🏻 (❤️ω❤️) Konnichiwa, senpai ${M.sender.username}! this is ${this.client.util.capitalize(this.client.config.name)}\n\n🎋 *Support us by following us on instagram:* https://www.instagram.com/das_abae\n\n💡 My Prefix is *( ${this.client.config.prefix} )*\n\n    ⇓ *📪 Command list 📪* ⇓\n\n`
+            let text = `👋🏻 Konnichiwa, senpai ${M.sender.username}! this is ${this.client.util.capitalize(this.client.config.name)}\n\n🎋 *Support us by following us on instagram:* https://www.instagram.com/das_abae\n\n💡 My Prefix is *( ${this.client.config.prefix} )*\n\n    ⇓ *📪 Command list 📪* ⇓\n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `┌ ◦ *${this.emojis[keys.indexOf(key)]}「${key.toUpperCase()}」${this.emojis[keys.indexOf(key)]}*\n${categories[
@@ -37,9 +37,9 @@ export default class Command extends BaseCommand {
                 ]
                     .map(
                         (command) =>
-                            `*${this.client.config.prefix}${this.replaceWithCustomAlphabet(command.config?.command)}* _${command.config.description.usage ?? ''}_`
+                            `*${this.replaceWithCustomAlphabet(command.config?.command)}* `
                     )
-                    .join('\n')}\n\n`
+                    .join(' • ')}\n\n`
 
             return void (await M.reply(
                 `${text}*📇 Notes:*\n*➪ Use ${this.client.config.prefix}help <command name> from help the list to see its description and usage*\n*➪ Eg: ${this.client.config.prefix}help profile*\n*➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
