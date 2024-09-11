@@ -15,17 +15,12 @@ export default class Command extends BaseCommand {
         })
     }
 
-    export default class extends BaseCommand {
-    private imageUrls: string[] = [
-        'http://yocliq.com/media/uploads/yocliq.com-26d152528efc8407d351bcb6c3c126f8.jpg',
-        'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
-    ]
+    
 
     exec = async (M) => {
         const cpus = os.cpus()
-        const randomImageUrl = this.imageUrls[Math.floor(Math.random() * this.imageUrls.length)]
-        const image = await this.client.utils.getBuffer(randomImageUrl)
-        return void (await M.reply( image, 'image', `*🔮𝘿𝘼𝘽𝙄 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊🔮*
+        
+        return void (await M.reply(`*🔮𝘿𝘼𝘽𝙄 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊🔮*
         
 🎋 *Users: ${(await this.client.DB.getAllUsers()).length}*
 🎖️ *Groups: ${Object.keys(await this.client.groupFetchAllParticipating()).length}*
