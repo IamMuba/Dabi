@@ -17,7 +17,9 @@ export default class Command extends BaseCommand {
 
     exec = async (M) => {
         const cpus = os.cpus()
-        return void (await M.reply(`🎋 *Users: ${(await this.client.DB.getAllUsers()).length}*
+        return void (await M.reply(`*🔮𝘿𝘼𝘽𝙄 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊🔮*
+        
+🎋 *Users: ${(await this.client.DB.getAllUsers()).length}*
 🎖️ *Groups: ${Object.keys(await this.client.groupFetchAllParticipating()).length}*
 💬 *Platform: ${os.platform()}*
 🌃 *Moderators: ${this.client.config.mods.length}*
